@@ -1,0 +1,125 @@
+:root {
+  --font: 'Montserrat', sans-serif;
+  --bg: #f7f7f7;
+  --white: #fff;
+  --black: #212121;
+  --gray-light: #e0e0e0;
+  --primary: #e63946;
+  --primary-hover: #d62839;
+}
+
+* {
+  margin: 0; padding: 0; box-sizing: border-box;
+}
+body {
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--black);
+  line-height: 1.5;
+}
+a { text-decoration: none; color: inherit; }
+
+/* HEADER */
+.site-header {
+  background: var(--black);
+  padding: 10px 0;
+  position: sticky; top: 0; z-index: 100;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+.container { width: 90%; max-width: 1200px; margin: 0 auto; }
+.header-inner {
+  display: flex; align-items: center; justify-content: space-between;
+}
+.logo img { height: 32px; }
+.nav-menu a {
+  color: var(--white);
+  margin-left: 24px;
+  font-weight: 500;
+  transition: color .2s;
+}
+.nav-menu a:hover { color: var(--primary); }
+
+/* CART PAGE */
+.cart-page {
+  padding: 100px 0 40px; /* chừa header */
+}
+.cart-container {
+  display: flex; gap: 40px;
+  background: var(--bg);
+}
+.cart-sidebar {
+  flex: 0 0 150px;
+  display: flex;
+  flex-direction: column; gap: 20px;
+}
+.cart-sidebar img {
+  width: 100%; border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* SUMMARY */
+.cart-summary {
+  flex: 1;
+  background: var(--white);
+  padding: 32px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+.cart-summary .title {
+  font-size: 1.75rem;
+  margin-bottom: 24px;
+  text-align: center;
+}
+.cart-list {
+  list-style: none;
+  margin-bottom: 32px;
+}
+.cart-list li {
+  padding: 12px 0;
+  border-bottom: 1px solid var(--gray-light);
+}
+.cart-list li:last-child { border-bottom: none; }
+
+.cart-actions {
+  display: flex; gap: 16px; justify-content: center;
+}
+.btn {
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background .2s, color .2s;
+}
+.btn-primary {
+  background: var(--primary);
+  color: var(--white);
+}
+.btn-primary:hover { background: var(--primary-hover); }
+.btn-outline {
+  background: transparent;
+  color: var(--primary);
+  border: 2px solid var(--primary);
+}
+.btn-outline:hover {
+  background: var(--primary);
+  color: var(--white);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .cart-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .cart-sidebar {
+    flex-direction: row; flex-wrap: wrap; justify-content: center;
+  }
+  .cart-sidebar img {
+    width: 120px;
+  }
+  .cart-summary {
+    width: 100%;
+  }
+}
